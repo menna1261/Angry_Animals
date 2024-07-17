@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhvm7ck88hlim"]
+
+[ext_resource type="Script" path="res://ground_collision.gd" id="1_36n7f"]
+[ext_resource type="AudioStream" uid="uid://dgbtjo6agx0si" path="res://AngryAnimals (1)/body-falling-to-ground-100474.mp3" id="2_v3qkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dlq7"]
+size = Vector2(1199, 121)
+
+[node name="Node2D" type="Area2D"]
+script = ExtResource("1_36n7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(595, 801.5)
+shape = SubResource("RectangleShape2D_7dlq7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_v3qkm")
+volume_db = 3.962
+
+[node name="fake water" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(603, 750)
+scale = Vector2(9.28906, 1.67969)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

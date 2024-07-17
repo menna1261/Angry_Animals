@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dh4sfynglauec"]
+
+[ext_resource type="Texture2D" uid="uid://hnbjwaes6kde" path="res://singeltons/low_opacity.jpg" id="1_xlcio"]
+
+[node name="main" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1201.0
+offset_bottom = 849.0
+texture = ExtResource("1_xlcio")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 1196.0
+offset_bottom = 850.0

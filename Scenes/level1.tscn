@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl61fgsg2dih7"]
+
+[ext_resource type="PackedScene" uid="uid://cpwk1rvfui6rm" path="res://level.tscn" id="1_vwxxe"]
+[ext_resource type="PackedScene" uid="uid://l7i738enlxqd" path="res://wooden.tscn" id="2_2xnrs"]
+[ext_resource type="PackedScene" uid="uid://p620q4yxmrn4" path="res://barrier.tscn" id="3_pmy8m"]
+
+[node name="Level1" instance=ExtResource("1_vwxxe")]
+
+[node name="wooden3" parent="." index="4" instance=ExtResource("2_2xnrs")]
+position = Vector2(590, 658)
+
+[node name="wooden4" parent="." index="5" instance=ExtResource("2_2xnrs")]
+position = Vector2(209, 726)
+
+[node name="barrier" parent="." index="8" instance=ExtResource("3_pmy8m")]
+position = Vector2(349, 358)
+rotation = -0.856017

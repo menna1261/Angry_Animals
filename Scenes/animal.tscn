@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3aqlesncx6je"]
+
+[ext_resource type="Texture2D" uid="uid://bbvbl363vyu20" path="res://AngryAnimals (1)/icon.svg" id="1_ijng6"]
+[ext_resource type="Script" path="res://animal.gd" id="1_vashf"]
+[ext_resource type="Texture2D" uid="uid://d0yn2tmudqaf5" path="res://AngryAnimals (1)/assets/items/arrow.png" id="3_3x2oi"]
+[ext_resource type="AudioStream" uid="uid://btr388nylxwgg" path="res://AngryAnimals (1)/assets/audio/stretch2.ogg" id="4_xquma"]
+[ext_resource type="AudioStream" uid="uid://cjsblx6jvvrnx" path="res://AngryAnimals (1)/assets/audio/catapult.ogg" id="5_vqqp6"]
+[ext_resource type="AudioStream" uid="uid://dvfbuhxtwkm2e" path="res://AngryAnimals (1)/assets/audio/kick_wood.ogg" id="6_6tayv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gab6w"]
+bounce = 0.2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xgi3n"]
+radius = 33.1361
+
+[node name="animal" type="RigidBody2D"]
+input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_gab6w")
+freeze = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_vashf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ijng6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xgi3n")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(1.5, -0.999999)
+scale = Vector2(3.55, 3.3)
+
+[node name="arrow" type="Sprite2D" parent="."]
+position = Vector2(81, 2.38419e-07)
+rotation = 0.000606283
+scale = Vector2(0.746517, 0.573305)
+texture = ExtResource("3_3x2oi")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xquma")
+volume_db = 1.0
+
+[node name="launching" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_vqqp6")
+volume_db = -8.914
+
+[node name="launching2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_6tayv")
+volume_db = -8.914
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="sleeping_state_changed" from="." to="." method="_on_sleeping_state_changed"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

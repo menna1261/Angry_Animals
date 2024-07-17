@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://cll0m4jx7xy87"]
+
+[ext_resource type="Texture2D" uid="uid://hnbjwaes6kde" path="res://singeltons/low_opacity.jpg" id="1_e8e35"]
+[ext_resource type="PackedScene" uid="uid://cl0lehberr1f4" path="res://panel.tscn" id="2_8sefw"]
+[ext_resource type="FontFile" uid="uid://bltiy45fvwdys" path="res://AngryAnimals (1)/assets/fonts/LuckiestGuy-Regular.ttf" id="3_hgdpk"]
+[ext_resource type="AudioStream" uid="uid://b4olo8y84tf0y" path="res://AngryAnimals (1)/assets/items/ambient-spring-forest-15846.mp3" id="4_ub3qj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iihv8"]
+font = ExtResource("3_hgdpk")
+font_size = 100
+shadow_size = 11
+shadow_color = Color(0.278431, 0, 0.639216, 0.85098)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1203.0
+offset_bottom = 855.0
+texture = ExtResource("1_e8e35")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="TextureButton" parent="HBoxContainer" instance=ExtResource("2_8sefw")]
+layout_mode = 2
+
+[node name="TextureButton2" parent="HBoxContainer" instance=ExtResource("2_8sefw")]
+layout_mode = 2
+level_number = 2
+
+[node name="TextureButton3" parent="HBoxContainer" instance=ExtResource("2_8sefw")]
+layout_mode = 2
+level_number = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = 55.0
+offset_right = 304.0
+offset_bottom = 156.0
+grow_horizontal = 2
+text = "ANGRY ANIMLS"
+label_settings = SubResource("LabelSettings_iihv8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ub3qj")
+autoplay = true

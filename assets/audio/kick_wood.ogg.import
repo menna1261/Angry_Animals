@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dvfbuhxtwkm2e"
+path="res://.godot/imported/kick_wood.ogg-897d654164a376c38c64d28e57b1397f.oggvorbisstr"
+
+[deps]
+
+source_file="res://AngryAnimals (1)/assets/audio/kick_wood.ogg"
+dest_files=["res://.godot/imported/kick_wood.ogg-897d654164a376c38c64d28e57b1397f.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

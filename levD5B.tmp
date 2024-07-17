@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpwk1rvfui6rm"]
+
+[ext_resource type="Texture2D" uid="uid://cjgqdr6ln67bc" path="res://AngryAnimals (1)/assets/Angry_Bird_t.jpg" id="1_tekgl"]
+[ext_resource type="Script" path="res://level.gd" id="1_uruu2"]
+[ext_resource type="PackedScene" uid="uid://bhvm7ck88hlim" path="res://ground_collision.tscn" id="2_gdoyg"]
+[ext_resource type="AudioStream" uid="uid://b4olo8y84tf0y" path="res://AngryAnimals (1)/assets/items/ambient-spring-forest-15846.mp3" id="4_dxidu"]
+[ext_resource type="PackedScene" uid="uid://bpwec4wrtuju1" path="res://scorer.tscn" id="5_bpwce"]
+[ext_resource type="PackedScene" uid="uid://6pxoruy3l8h2" path="res://game.tscn" id="6_i1yjc"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_uruu2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(599, 404)
+texture = ExtResource("1_tekgl")
+
+[node name="Animal_start" type="Marker2D" parent="."]
+position = Vector2(98, 380)
+
+[node name="Node2D" parent="." instance=ExtResource("2_gdoyg")]
+position = Vector2(4, -6)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_dxidu")
+volume_db = -12.876
+
+[node name="scorer" parent="." instance=ExtResource("5_bpwce")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="game_ui" parent="CanvasLayer" instance=ExtResource("6_i1yjc")]

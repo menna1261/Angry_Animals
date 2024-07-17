@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://p620q4yxmrn4"]
+
+[ext_resource type="Texture2D" uid="uid://dsbfwb811qhtq" path="res://AngryAnimals (1)/assets/env/elementStone025.png" id="1_612et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcwd7"]
+size = Vector2(42, 229)
+
+[node name="barrier" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 51)
+scale = Vector2(0.6, 1.06364)
+texture = ExtResource("1_612et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 51.5)
+shape = SubResource("RectangleShape2D_xcwd7")
